@@ -27,7 +27,7 @@ namespace DataBase.Pages
 
         private void NavigateEntrance(object sender, RoutedEventArgs e)
         {
-           
+            FrameClass.FrameProject.Navigate(new SignIn());
         }
 
         private void NavigateRegistration(object sender, RoutedEventArgs e)

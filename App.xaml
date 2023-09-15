@@ -6,11 +6,11 @@
     <Application.Resources>
         <Style TargetType="Button" x:Key="ButtonMain">
             <Style.Setters>
-                <Setter Property="Margin" Value="10"/>
                 <Setter Property="Background" Value="#f8f8ff"/>
                 <Setter Property="FontWeight" Value="UltraLight"/>
                 <Setter Property="MinWidth" Value="150"/>
-                <Setter Property="Margin" Value="100,20"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
@@ -30,43 +30,78 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <Style TargetType="Button" x:Key="ButtonClose">
+            <Style.Setters>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Background" Value="#f8f8ff"/>
+                <Setter Property="FontWeight" Value="UltraLight"/>
+                <Setter Property="MinWidth" Value="150"/>
+                <Setter Property="Margin" Value="100,20"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#fc8e86"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#ff6347"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonSave">
+            <Style.Setters>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Background" Value="#f8f8ff"/>
+                <Setter Property="FontWeight" Value="UltraLight"/>
+                <Setter Property="MinWidth" Value="150"/>
+                <Setter Property="Margin" Value="100,20"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#ccffcc"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#8affbd"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <Style x:Key="CBstyle" TargetType="Border">
             <Style.Setters>
                 <Setter Property="Background" Value="#abe4ed"/>
                 <Setter Property="CornerRadius" Value="20"/>
             </Style.Setters>
         </Style>
-        
+
         <Style x:Key="TextBlockMain" TargetType="TextBlock">
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
-        
-        <Style x:Key="TextBoxStyle" TargetType="TextBox">
-            <Style.Setters>
-                <Setter Property="Margin" Value="4"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="TextBox">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="10">
-                                <ContentPresenter/>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style.Setters>
-        </Style>
-
-        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Style.Setters>
-                <Setter Property="Margin" Value="4"/>
-            </Style.Setters>
-        </Style>
-
-
-
 
         <Style x:Key="TextBox" TargetType="{x:Type TextBox}">
             <Setter Property="Background" Value="{DynamicResource Light.FillColor.Control.Default}"/>
@@ -94,10 +129,10 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="11"/>
                                         <ColumnDefinition/>
-                                        <ColumnDefinition Width="38"/>
+                                        <ColumnDefinition Width="11"/>
                                     </Grid.ColumnDefinitions>
                                     <ScrollViewer x:Name="PART_ContentHost" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Focusable="False"/>
-                                    <TextBlock x:Name="Text" Foreground="{DynamicResource Light.FillColor.Text.Secondary}" Grid.Column="1" VerticalAlignment="Center" FontFamily="Segoe UI Variable Static Display" FontSize="14" Text="{TemplateBinding DataContext}"/>
+                                    <TextBlock x:Name="Text" Foreground="#696969" Grid.Column="1" VerticalAlignment="Center" FontFamily="Segoe UI Variable Static Display" FontSize="14" Text="{TemplateBinding DataContext}"/>
                                 </Grid>
                             </Border>
                             <Border x:Name="ActiveBox" Background="{x:Null}" BorderBrush="{DynamicResource Light.FillColor.Accent.Default}" Visibility="Collapsed" BorderThickness="0,0,0,2" CornerRadius="3" SnapsToDevicePixels="True"/>

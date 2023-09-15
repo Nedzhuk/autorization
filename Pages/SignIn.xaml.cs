@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace DataBase.Pages
 {
     /// <summary>
-    /// Interaction logic for Registration.xaml
+    /// Interaction logic for SignIn.xaml
     /// </summary>
-    public partial class Registration : Page
+    public partial class SignIn : Page
     {
-        public Registration()
+        public SignIn()
         {
             InitializeComponent();
         }
